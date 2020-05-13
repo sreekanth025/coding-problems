@@ -6,6 +6,10 @@ Find two lines, which together with x-axis forms a container, such that the cont
 */
 
 // O(n) - Time Complexity: 
+
+#include<bits/stdc++.h>
+using namespace std; 
+
 class Solution {
 public:
     int maxArea(vector<int>& height) {
