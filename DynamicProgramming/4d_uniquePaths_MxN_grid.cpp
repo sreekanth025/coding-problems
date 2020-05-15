@@ -11,7 +11,7 @@ Recursion: count(m,n) = count(m-1, n) + count(m, n-1)
 Can be optimized using dynamic programming.
 */
 
-// Time Complexity: O(n^2)
+// Time Complexity: O(m*n)
 
 #include<bits/stdc++.h>
 using namespace std;
