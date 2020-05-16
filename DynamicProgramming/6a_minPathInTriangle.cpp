@@ -4,7 +4,7 @@ Each step you may move to adjacent numbers on the row below.
 */
 
 // Problem link: https://leetcode.com/problems/triangle/
-// Time Complexity: O(n)
+// Time Complexity: O(n^2)
 
 #include<bits/stdc++.h>
 using namespace std;
