@@ -1,0 +1,53 @@
+============================================================================
+int modExp(x, n, m)
+{
+    int result=1
+    while(n>0)
+    {
+        if(n%2==1) result *= x; 
+        x=x*x; 
+        n/=2; 
+    }
+    return result;
+}
+============================================================================
+Given A and M, and (A.B)mod(M) = 1. Find B.
+B is modular multiplicative inverse of A under M. 
+Using Fermat little theorem, B = modExp(A, p-2, p). (only when M is a prime)
+============================================================================
+bool isPrime(int n)
+{
+    if(n<=1) return false;
+    if(n<=3) return true; 
+    if(n%2==0 || n%3==0) return false; 
+
+    for(int i=5; i*i<=n; i+=6)
+        if(n%i==0 || n%(i+2)==0) return false; 
+    return true; 
+}
+============================================================================
+Sieve of Eratosthenes: (Find all primes from 1 to n)
+1. Mark all numbers as prime except 1; 
+2. Traverse over each prime numbers smaller than sqrt(N)
+3. For each prime number, mark its multiples as composite numbers
+4. Numbers, which are not the multiples of any number, 
+   will remain marked as prime number 
+   and others will change to composite numbers.
+
+void sieve(int N) 
+{
+    bool isPrime[N+1];
+    for(int i = 0; i <= N;++i)
+        isPrime[i] = true;
+
+    isPrime[0] = false;
+    isPrime[1] = false;
+
+    for(int i = 2; i * i <= N; ++i)
+            if(isPrime[i] == true)
+                for(int j = i * i; j <= N ;j += i)
+                    isPrime[j] = false;
+}
+
+Total complexity: N*(½ + ⅓ + ⅕ + … ) = O(NloglogN)
+============================================================================
