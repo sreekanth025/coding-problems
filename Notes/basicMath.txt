@@ -51,3 +51,11 @@ void sieve(int N)
 
 Total complexity: N*(½ + ⅓ + ⅕ + … ) = O(NloglogN)
 ============================================================================
+A modification of sieve of Eratosthenes: 
+Find the number of unique prime factors for each number from 1 to N. 
+
+int uniquePrimeFactors[N+1]= {0}; 
+REP(i,2,N)
+    if(uniquePrimeFactors[i]==0)
+        for(int j=i; j<N+1; j+=i) uniquePrimeFactors[j]++; 
+============================================================================
