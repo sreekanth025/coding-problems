@@ -5,6 +5,7 @@ using namespace std;
 
 #define int long long
 
+// O(n)
 void method_1(string str) {
 
     int ans=1;
